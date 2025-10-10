@@ -1,0 +1,5 @@
+# VS code settings
+.vscode/
+
+# Build artifacts
+build/
