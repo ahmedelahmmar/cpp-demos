@@ -17,8 +17,8 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/demos/*.cc)
 file(GLOB_RECURSE TST_FILES ${PROJECT_SOURCE_DIR}/tests/*.cc)
 
-add_executable(main_bin ${PROJECT_SOURCE_DIR}/main.cc ${SRC_FILES})
-target_compile_options(main_bin PRIVATE 
+add_executable(driver_bin ${PROJECT_SOURCE_DIR}/main.cc ${SRC_FILES})
+target_compile_options(driver_bin PRIVATE 
   -Wall      # Basic warnings
   -Wextra    # Extra warnings
   -Werror
