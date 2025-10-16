@@ -3,7 +3,7 @@
 #include <stdexcept>
 #include <iostream>
 
-namespace demos::exceptions
+namespace Demos::Exceptions
 {
 /**
  * Throws an exception whenever you invoke it with an argument equal to 0xACE
@@ -13,5 +13,5 @@ struct PodThrowingException
     void invoke(int);
 };
 
-void run_demo(void);
-} // namespace exceptions
+void Run(void);
+} // namespace Exceptions

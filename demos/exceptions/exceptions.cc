@@ -1,6 +1,6 @@
 #include "exceptions.hpp"
 
-void demos::exceptions::PodThrowingException::invoke(int _value)
+void Demos::Exceptions::PodThrowingException::invoke(int _value)
 {
     if (0xACE == _value)
         throw std::runtime_error{"Glad to receive an exceptional ACE."};
@@ -9,9 +9,9 @@ void demos::exceptions::PodThrowingException::invoke(int _value)
 }
 
 
-void demos::exceptions::run_demo(void)
+void Demos::Exceptions::Run(void)
 {
-    demos::exceptions::PodThrowingException ethrower;
+    Demos::Exceptions::PodThrowingException ethrower;
 
     try
     {
@@ -20,7 +20,7 @@ void demos::exceptions::run_demo(void)
         ethrower.invoke(0x000ACE);
         ethrower.invoke(0xC0FFEE);
     }
-    catch(const std::runtime_error& e)
+    catch (const std::runtime_error& e)
     {
         std::cerr << "exception caught with message: " << e.what() << '\n';
     }
