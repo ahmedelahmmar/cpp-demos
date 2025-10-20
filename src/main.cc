@@ -1,10 +1,12 @@
-#include <bits/stdc++.h>
-#include <iostream>
+#include "experiments/revealing_the_vtbl.hpp"
 
-int main(int argc, char **argv)
+int main(const int argc, const char **argv)
 {
     static_cast<void>(argc);
     static_cast<void>(argv);
+
+    RevealingTheVtbl experiment;
+    experiment.run();
 
     return 0;
 }
