@@ -14,11 +14,11 @@ set(CMAKE_BINARY_DIR ${PROJECT_SOURCE_DIR}/build)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
-file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/demos/*.cc)
+file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cc)
 file(GLOB_RECURSE TST_FILES ${PROJECT_SOURCE_DIR}/tests/*.cc)
 
-add_executable(driver_bin ${PROJECT_SOURCE_DIR}/main.cc ${SRC_FILES})
-target_compile_options(driver_bin PRIVATE 
+add_executable(src_binary ${SRC_FILES})
+target_compile_options(src_binary PRIVATE 
   -Wall      # Basic warnings
   -Wextra    # Extra warnings
   -Werror
@@ -39,8 +39,8 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-add_executable(gtest_bin ${TST_FILES} ${SRC_FILES})
-target_link_libraries(gtest_bin PRIVATE 
+add_executable(test_binary ${TST_FILES} ${SRC_FILES})
+target_link_libraries(test_binary PRIVATE 
   GTest::gtest_main
   GTest::gtest 
   GTest::gmock 
