@@ -23,9 +23,11 @@ target_compile_options(src_binary PRIVATE
   -Wextra    # Extra warnings
   -Werror
   -Wpedantic # Strict ISO C++
+  -pthread
   -O0
   -g
 )
+target_link_libraries(src_binary PRIVATE pthread)
 
 
 # gtest
